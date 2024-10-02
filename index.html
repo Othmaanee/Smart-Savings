@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Savings</title>
+    <link rel="icon" href="logo.jpg" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>$mart Savings</h1>
+        <h2>Gérez votre budget, réalisez vos rêves.</h2>
+    </header>
+
+    <main>
+        <label for="budget">Budget Mensuel :</label>
+        <input id="budget" type="number" placeholder="Ex: 2000" aria-label="Budget Mensuel">
+        <span class="error-message" id="budgetError"></span>
+        <button type="button" id="saveBudget">Enregistrer le Budget</button>
+
+        <section class="form-section">
+            <form id="transactionForm">
+                <label for="name">Nom de la transaction :</label>
+                <input id="name" type="text" placeholder="Ex: Salaire" aria-label="Nom de la transaction" required>
+        
+                <label for="amount">Montant :</label>
+                <input id="amount" type="number" placeholder="Ex: 1000" aria-label="Montant" required>
+        
+                <label for="type">Type :</label>
+                <select id="type" aria-label="Type de transaction">
+                    <option value="income">Revenu</option>
+                    <option value="expense">Dépense</option>
+                </select>
+        
+                <label for="category" style="display: none;" id="categoryLabel">Catégorie :</label>
+                <select id="category" aria-label="Catégorie">
+                    <option value="food">Alimentation</option>
+                    <option value="transport">Transport</option>
+                    <option value="housing">Logement</option>
+                    <option value="leisure">Loisirs</option>
+                    <option value="health">Santé</option>
+                    <option value="other">Autres</option>
+                </select>
+        
+                <button type="submit" id="submit">Soumettre</button>
+            </form>
+        </section>
+        
+
+        <section class="totals-section">
+            <h2>Totals</h2>
+            <p>Total des Revenus : <span id="totalIncome">0</span> €</p>
+            <p>Total des Dépenses : <span id="totalExpense">0</span> €</p>
+            <p>Solde : <span id="balance">0</span> €</p>
+        </section>
+        
+        <section class="history-section">
+            <h2>Historique des transactions</h2>
+            <ul id="transactionHistory"></ul>
+        </section>        
+    </main>
+</body>
+</html>
